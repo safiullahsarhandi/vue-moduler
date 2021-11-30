@@ -1,8 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './routes/index';
+Vue.config.productionTip = false;
+import Layout from './components/Layout.vue';
 
-Vue.config.productionTip = false
+// import packages
+import './plugins/Snotify';
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+Vue.component('Layout', Layout);
+
+initApp();
+function initApp(){
+  // console.log(router)
+  new Vue({
+    render: h => h(App),
+    router,
+  }).$mount('#app')
+  
+}
