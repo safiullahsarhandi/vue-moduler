@@ -5,6 +5,7 @@ export default modulesList.map((module) => {
         return require(`./${module}`);
 
     }catch(e){
+        console.log(e);
         throw new Error(`module: ${module} not found. please create module like modules/${module} or remove ${module} in modules.js`);
     }
     
